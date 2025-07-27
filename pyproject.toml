@@ -7,4 +7,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "steam-api-collector"
 version = "1.0.0"
-dependencies = []
+dependencies = [
+    "pandas",
+    "pyarrow",
+    "sqlalchemy",
+    "mysql-connector-python"
+]

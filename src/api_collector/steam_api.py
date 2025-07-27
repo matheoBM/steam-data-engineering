@@ -44,7 +44,13 @@ def get_app_data(app_id, app_name):
     try:
         release_date = response_json['release_date']['date']
         price = response_json['price_overview']['initial']
-        logger.info("STEAM API: ", app_name, ' ', release_date, ' ', price)
+
+        return {
+            'appid': app_id,
+            'name': app_name,
+            'release_date': release_date,
+            'price': price
+        }
     except KeyError as ke:
         logger.info(f"{app_name} sem dados validos")
         return response.status_code
