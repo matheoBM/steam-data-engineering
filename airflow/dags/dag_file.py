@@ -69,7 +69,7 @@ def steam_dag():
         return path
     
     @task
-    def save_to_tab(df:pd.DataFrame, path="/tmp/steam_data.parquet"):
+    def save_to_tab(df:pd.DataFrame, path="/tmp/steam_data.tsv"):
         df.to_csv(path, sep='\t', index=False, header=False)
         logger.info(f'Saving: \n {df.head()}')
         return path
